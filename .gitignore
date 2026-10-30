@@ -1,6 +1,40 @@
+######################
+# Section for 'ignore patterns' from the project-template
+#
+# !! Don't edit anything in this section to avoid merge conflics !!
+######################
+build
+.project
+.cproject
+.pydevproject
+.settings
+.kdev4
+*.kdev4
+.vscode
+CMakeLists.txt.user
+*.code-workspace
+.cache
+#files ending with ~ are emacs backups
+*~
+#files ending with .swp might show up when using vi
+*.swp
+
+# ignore cmake presets file
+CMakePresets.json
+# ignore this files used with clangd
+compile_commands.json
+
+######################
+# Project specific 'ignore patterns'
+#
+# Put you project specific ignores below.
+# If they are generally useful consider adding them to the 
+# project-template and the merge them in.
+######################
 extension/node_modules/
 extension/out/
 extension/python/
 extension/schemas/
-extension/*.vsix
+*.vsix
 __pycache__/
+*.pyc

@@ -1,0 +1,67 @@
+# Difference with default Doxyfile 1.9.8
+PROJECT_NAME           = @PROJECT_NAME@
+PROJECT_NUMBER         = @DOXYGEN_PROJECT_NUMBER@
+PROJECT_LOGO           = @CMAKE_CURRENT_SOURCE_DIR@/doc/ChimeraTK_Logo_whitebg.png
+OUTPUT_DIRECTORY       = @CMAKE_CURRENT_BINARY_DIR@/doc
+JAVADOC_AUTOBRIEF      = YES
+TAB_SIZE               = 8
+BUILTIN_STL_SUPPORT    = YES
+EXTRACT_ALL            = YES
+CASE_SENSE_NAMES       = NO
+SORT_MEMBERS_CTORS_1ST = YES
+QUIET                  = YES
+INPUT                  = @CMAKE_CURRENT_SOURCE_DIR@ @DOXYGEN_EXTRA_INPUT@
+STRIP_FROM_PATH        = @CMAKE_CURRENT_SOURCE_DIR@
+FILE_PATTERNS          = *.c \
+                         *.cc \
+                         *.cxx \
+                         *.cpp \
+                         *.c++ \
+                         *.d \
+                         *.java \
+                         *.ii \
+                         *.ixx \
+                         *.ipp \
+                         *.i++ \
+                         *.inl \
+                         *.h \
+                         *.hh \
+                         *.hxx \
+                         *.hpp \
+                         *.h++ \
+                         *.idl \
+                         *.odl \
+                         *.cs \
+                         *.php \
+                         *.php3 \
+                         *.inc \
+                         *.m \
+                         *.mm \
+                         *.dox \
+                         *.py \
+                         *.f90 \
+                         *.f \
+                         *.for \
+                         *.vhd \
+                         *.vhdl \
+                         */doc/*.md
+RECURSIVE              = YES
+EXCLUDE_SYMBOLS        = ChimeraTK::detail
+EXAMPLE_PATH           = @CMAKE_CURRENT_SOURCE_DIR@ @CMAKE_BINARY_DIR@/generated
+IMAGE_PATH             = @CMAKE_CURRENT_SOURCE_DIR@
+SOURCE_BROWSER         = YES
+HTML_COLORSTYLE_HUE    = 202
+HTML_COLORSTYLE_SAT    = 255
+HTML_COLORSTYLE_GAMMA  = 100
+HTML_DYNAMIC_SECTIONS  = YES
+GENERATE_TREEVIEW      = YES
+MATHJAX_RELPATH        = http://www.mathjax.org/mathjax
+GENERATE_LATEX         = NO
+LATEX_CMD_NAME         = latex
+EXTERNAL_GROUPS        = NO
+EXTERNAL_PAGES         = NO
+TEMPLATE_RELATIONS     = YES
+DOT_IMAGE_FORMAT       = svg
+INTERACTIVE_SVG        = YES
+DOT_GRAPH_MAX_NODES    = 200
+HAVE_DOT               = YES

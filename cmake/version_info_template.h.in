@@ -1,0 +1,10 @@
+#pragma once
+
+namespace ChimeraTK::VersionInfo {
+
+  const int major{${${PROJECT_NAME}_MAJOR_VERSION_INT}};
+  const int minor{${${PROJECT_NAME}_MINOR_VERSION_INT}};
+  const int applicationPatch{${${PROJECT_NAME}_PATCH_VERSION_INT}};
+
+  static constexpr const char * soVersion = "${${PROJECT_NAME}_SOVERSION}";
+} // namespace ChimeraTK::VersionInfo
