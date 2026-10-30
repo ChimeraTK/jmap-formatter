@@ -1,0 +1,73 @@
+{
+  "name": "jmap-formatter",
+  "displayName": "ChimeraTK jmap Formatter",
+  "description": "Language support and formatting for ChimeraTK .jmap device-mapping files.",
+  "version": "0.0.2",
+  "publisher": "ChimeraTK",
+  "license": "LGPL-3.0-or-later",
+  "icon": "logo-ChimeraTK.png",
+  "keywords": [
+    "jmap",
+    "chimeratk",
+    "formatter",
+    "deviceaccess",
+    "desy"
+  ],
+  "engines": {
+    "vscode": "^1.127.0"
+  },
+  "categories": [
+    "Formatters",
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:jmap"
+  ],
+  "main": "./out/extension.js",
+  "scripts": {
+    "copy-assets": "node -e \"const fs=require('fs');fs.mkdirSync('python',{recursive:true});fs.mkdirSync('schemas',{recursive:true});fs.copyFileSync('../jmapfmt.py','python/jmapfmt.py');fs.copyFileSync('../jmap.schema.json','schemas/jmap.schema.json')\"",
+    "build": "node build.js",
+    "watch": "node build.js --watch",
+    "vscode:prepublish": "npm run copy-assets && npm run build",
+    "package": "vsce package"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "jmap",
+        "aliases": [
+          "jmap",
+          "ChimeraTK jmap"
+        ],
+        "extensions": [
+          ".jmap"
+        ]
+      }
+    ],
+    "grammars": [
+      {
+        "language": "jmap",
+        "scopeName": "source.jmap",
+        "path": "./syntaxes/jmap.tmLanguage.json"
+      }
+    ],
+    "jsonValidation": [
+      {
+        "fileMatch": "*.jmap",
+        "url": "./schemas/jmap.schema.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/vscode": "1.125.0",
+    "esbuild": "^0.28.2",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "vscode-json-languageservice": "^5.7.2"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  }
+}

@@ -1,0 +1,6 @@
+extension/node_modules/
+extension/out/
+extension/python/
+extension/schemas/
+extension/*.vsix
+__pycache__/

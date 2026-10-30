@@ -1,0 +1,6 @@
+{
+  "scopeName": "source.jmap",
+  "patterns": [
+    { "include": "source.json" }
+  ]
+}
